@@ -44,4 +44,11 @@ class MyControllerTest {
                 .andReturn();
     }
 
+    @Test
+    void whenBreakingTestPResent_thenBreakBuild() throws Exception {
+        mockMvc.perform(get(URI).contentType("application/json"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn();
+    }
+
 }
