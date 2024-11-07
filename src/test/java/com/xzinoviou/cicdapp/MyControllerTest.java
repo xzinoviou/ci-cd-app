@@ -45,10 +45,14 @@ class MyControllerTest {
     }
 
     @Test
-    void whenBreakingTestPResent_thenBreakBuild() throws Exception {
-        mockMvc.perform(get(URI).contentType("application/json"))
+    void whenSpaceSupplied_thenReturn200WithResultMap() throws Exception {
+        final MvcResult result = mockMvc.perform(get(URI + "/ ").contentType("application/json"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andReturn();
+
+        final String output = result.getResponse().getContentAsString();
+
+        assertEquals("{\"name\":\" \"}", output);
     }
 
 }
