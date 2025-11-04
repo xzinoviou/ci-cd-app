@@ -6,7 +6,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "[--- Building started... ---] "
-                sh './mvnw -B -DskipTests clean package'
+                sh './mvnw -DskipTests clean package'
             }
         }
 
