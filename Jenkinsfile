@@ -8,6 +8,7 @@ pipeline {
         agent { label 'jenkins-build-agent' }
             steps {
                 echo "[--- Stage: Build started---] "
+                echo "List of env variables test"
                 echo "MYSQL_PORT = ${env.MYSQL_PORT}"
                 echo "MYSQL_DB = ${env.MYSQL_DB}"
                 echo "MYSQL_HOST = ${env.MYSQL_HOST}"
