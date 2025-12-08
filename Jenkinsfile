@@ -1,10 +1,11 @@
 pipeline {
-    agent any
+    agent none
 
 
     stages {
 
         stage("build") {
+        agent { label 'jenkins-build-agent' }
             steps {
                 echo "[--- Stage: Build started---] "
                 echo "MYSQL_PORT = ${env.MYSQL_PORT}"
@@ -15,6 +16,7 @@ pipeline {
         }
 
         stage("test") {
+        agent { label 'jenkins-build-agent' }
             steps {
                 echo "[--- Stage: Testing started---] "
             }
