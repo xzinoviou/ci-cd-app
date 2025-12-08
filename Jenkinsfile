@@ -7,7 +7,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "[--- Stage: Build started---] "
-                echo ${env}
+                echo "${env}"
             }
         }
 
